@@ -209,6 +209,11 @@
   padding: 100px 0;
   overflow: hidden;
 }
+@media screen and (max-width: 991px) {
+  .OurRooms {
+    padding: 50px 0;
+  }
+}
 .OurRooms .title {
   margin-bottom: 40px;
 }
@@ -381,12 +386,17 @@
 }
 @media screen and (max-width: 991px) {
   .about-properties {
-    padding: 60px 0;
+    padding: 50px 0;
   }
 }
 .about-properties h2 {
   color: #2C2C2C;
   margin-bottom: 50px;
+}
+@media screen and (max-width: 991px) {
+  .about-properties h2 {
+    margin-bottom: 0px;
+  }
 }
 .about-properties .left {
   color: #ffffff;
@@ -403,6 +413,12 @@
 @media screen and (max-width: 991.98px) {
   .about-properties .left {
     padding-left: 0px;
+  }
+}
+@media screen and (max-width: 568px) {
+  .about-properties .left a {
+    display: block;
+    margin-bottom: 20px;
   }
 }
 .about-properties .abt-prop {
@@ -775,6 +791,11 @@
 .home-testimonials {
   padding: 100px 0;
   background: #E4DEAE;
+}
+@media screen and (max-width: 991px) {
+  .home-testimonials {
+    padding: 50px 0;
+  }
 }
 .home-testimonials .testimon-wrap {
   max-width: 830px;

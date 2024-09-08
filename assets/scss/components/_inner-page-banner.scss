@@ -46,6 +46,9 @@
 
   .abtArcadia {
     padding: 100px 0 60px;
+    @include max(768)  {
+      padding: 50px 0px;
+    }
     .small-container {
       width: 100%;
       max-width: 700px;
@@ -55,7 +58,6 @@
       }
       @include max(768) {
         max-width: 100%;
-          padding: 50px 0px;
       }
       .abtDescription {
         .big-text {

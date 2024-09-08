@@ -201,6 +201,9 @@
     background-color: #ffffff;
     padding: 100px 0;
     overflow: hidden;
+    @include max(991) {
+      padding: 50px 0;
+    }
     .title {
       margin-bottom: 40px;
       h2 {
@@ -374,11 +377,14 @@
     overflow: hidden;
     padding: 100px 0;
     @include max(991) {
-      padding: 60px 0;
+      padding: 50px 0;
     }
     h2{
         color: #2C2C2C;
         margin-bottom: 50px;
+        @include max(991) {
+          margin-bottom: 0px;
+        }
     }
     .left{
         color: #ffffff;
@@ -392,6 +398,12 @@
         @include max(991.98) {
             padding-left: 0px;
         }
+        @include max(568) {
+         a {
+          display: block;
+          margin-bottom: 20px;
+         }
+      }
     }
     .abt-prop{
         position: relative;
@@ -829,6 +841,9 @@
 .home-testimonials {
   padding: 100px 0;
 	background: #E4DEAE;
+  @include max(991) {
+    padding: 50px 0;
+  }
 	.testimon-wrap{
 		max-width: 830px;
 		margin: auto;

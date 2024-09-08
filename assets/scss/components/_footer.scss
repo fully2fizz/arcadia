@@ -1,0 +1,330 @@
+
+
+@import '../utilities/variable';
+@import '../mixins/mixins';
+
+.footer {
+    padding: 100px 0 40px 0;
+    background-color: #000;
+    @include max(991.98) {
+    padding: 40px 0;
+  
+    }
+    .row {
+      &.outer {
+        --bs-gutter-x: #{size(70)};
+  
+        @include max(1419.98) {
+          --bs-gutter-x: 0;
+        }
+  
+        @include max(991.98) {
+          margin-bottom: size(32);
+        }
+  
+        .col-5 {
+          width: 100%;
+  
+          @include min(992) {
+            width: 38%;
+          }
+  
+          @include min(1420) {
+            width: 43.21%;
+          }
+        }
+  
+        .col-7 {
+          width: 100%;
+  
+          @include min(992) {
+            width: 62%;
+          }
+  
+          @include min(1420) {
+            width: 56.79%;
+          }
+        }
+      }
+  
+    }
+  
+    .logo-social-wrap {
+      @include max(991.98) {
+        margin-bottom: size(56);
+      }
+    }
+  
+    .inner {
+  
+      @include max(991.98) {
+        flex-wrap: wrap;
+      }
+  
+      >div {
+        @include max(991.98) {
+          padding: size(24) 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+        }
+      }
+  
+      >div:first-child {
+        padding-top: 0;
+      }
+  
+      >div:nth-child(1) {
+        max-width: size(158.85);
+        width: 100%;
+  
+        @include max(991.98) {
+          max-width: 100%;
+        }
+      }
+  
+      >div:nth-child(2) {
+        max-width: size(158.85);
+        width: 100%;
+  
+        @include max(991.98) {
+          max-width: 100%;
+        }
+      }
+  
+      >div:nth-child(3) {
+        max-width: size(255);
+        width: 100%;
+  
+        @include max(991.98) {
+          max-width: 100%;
+        }
+      }
+  
+      >div + div {
+        padding-left: size(22);
+  
+        @include max(991.98) {
+          padding-left: 0;
+        }
+      }
+  
+      .title {
+        display: block;
+        font-size: size(24);
+        font-weight: 500;
+        color: $white;
+        margin-bottom: size(26);
+        line-height: 1;
+        letter-spacing: - size(0.48); 
+  
+        @include max(1419.98) {
+          font-size: size(20);
+        }
+      }
+  
+    }
+  
+    .logo {
+      >a {
+        width: max-content;
+        
+        img {
+          object-fit: contain;
+        }
+      }
+    }
+  
+    .social {
+  
+      ul {
+        gap: size(12);
+      }
+  
+  
+      a {
+        width: size(43);
+        height: size(43);
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        transition: all ease-out 0.5s;
+        justify-content: center;
+  
+        @include min(992) {
+          &:hover {
+            border-color: $primary-color;
+  
+            >svg {
+               path {
+                fill: $primary-color;
+               }
+            }
+          }
+        }
+  
+        >svg {
+          width: size(15.7);
+          height: size(15.4);
+  
+          path {
+            transition: all ease-out 0.5s;
+          }
+        }
+      }
+    }
+  
+    .quick-links {
+  
+      ul {
+        @include max(991.98) {
+          display: flex;
+          flex-wrap: wrap;
+          row-gap: size(16);
+        }
+      }
+  
+      li {
+        line-height: size(28);
+  
+        @include max(991.98) {
+          width: 50%;
+        }
+  
+        + li {
+          margin-top: size(15);
+  
+          @include max(1419.98) {
+            margin-top: size(8);
+          }
+  
+          @include max(991.98) {
+            margin-top: 0;
+          }
+        }
+  
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+  
+      a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: size(18);
+        font-weight: 300;
+        line-height: 1.6;
+        transition: all ease-out 0.5s;
+  
+        @include min(992) {
+          &:hover {
+            color: $primary-color;
+          }
+        }
+  
+        @include max(1419.98) {
+          font-size: size(16);
+          letter-spacing: - size(.16);
+        }
+      }
+    }
+  
+    .address {
+  
+      p {
+        font-size: size(18);
+        line-height: 1.6;
+        font-weight: 300;
+        margin-bottom: size(32);
+        color: #fff;
+  
+        @include max(1419.98) {
+          font-size: size(16);
+          letter-spacing: - size(.16);
+        }
+  
+        @include max(1199.98) {
+          margin-bottom: size(16);
+        }
+  
+        @include max(991.98) {
+          max-width: size(230);
+        }
+      }
+  
+      a {
+        color: $white;
+        text-decoration: none;
+        font-size: size(22);
+        font-weight: 300;
+        line-height: 1.6;
+        letter-spacing: size(.22);
+        transition: all ease-out 0.5s;
+  
+        @include min(992) {
+          &:hover {
+            color: $primary-color;
+          }
+        }
+  
+        &:not(:first-child) {
+          margin-top: size(7);
+        }
+  
+        @include max(1419.98) {
+          font-size: size(18);
+          letter-spacing: size(.18);
+        }
+      }
+  
+    }
+  
+    .copyright-wrap {
+        margin-top: 20px;
+      @include max(991.98) {
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .social {
+        margin-bottom: size(32);
+      }
+      
+      p {
+        font-size: size(18);
+        font-weight: 300;
+        line-height: 1.6;
+        letter-spacing:  size(.36);
+  
+        @include max(991.98) {
+          font-size: size(16);
+          letter-spacing: size(.32);
+          text-align: center;
+        }
+  
+        a {
+          color: inherit;
+          font-size: inherit;
+          font-weight: inherit;
+          letter-spacing: inherit;
+          line-height: inherit;
+          transition: all ease-out 0.5s;
+  
+          @include min(992) {
+            &:hover {
+              color: #fff;
+            }
+          }
+  
+        }
+      }
+  p {
+    color: #fff;
+  }
+      p + p {
+        margin-top: size(10);
+      }
+  
+    }
+  
+  }
+  

@@ -1,0 +1,86 @@
+
+.ttl {
+	@include font-semibold();
+	margin-bottom:size(32);
+	h1,h2,h3,h4,h5,h6,p {
+		font-size: inherit;
+		margin: inherit;
+		color: inherit;
+		padding: inherit;
+		span {
+			display: block;
+		}
+		a {
+			color: inherit;
+			&:hover {
+				color: $hover;
+			}
+		}
+	}
+	&.white{
+		color: #fff;
+	}
+	&.black{
+		color: #000;
+	}
+	&.center {
+		text-align: center;
+	}
+	.mb-0 {
+		margin-bottom: 0;
+	}
+}
+.ttl-sec {
+	color: $title-color;
+	display: block;
+	margin-bottom:size(32);
+	&.white {
+		color: $white;
+	}
+	&.black {
+		color: $black;
+	}
+	&.ttu {
+		text-transform: uppercase;
+	}
+	&.mb-0 {
+		margin-bottom: 0;
+	}
+	&.center {
+		text-align: center;
+	}
+	small {
+		display: block;
+		font-weight: 300;
+		text-transform: none;
+	}
+}
+.ttl-page {
+	color:  $title-color;
+	&.white {
+		color: $white;
+	}
+	&.black {
+		color: $black;
+	}
+	&.ttu {
+		text-transform: uppercase;
+	}
+	&.mb-0 {
+		margin-bottom: 0;
+	}
+	&.center {
+		text-align: center;
+	}
+}
+	
+.ttl-lg {
+	font-size: $ttl-lg;
+	line-height: 1.3;
+	
+}
+.ttl-md {
+	font-size: $ttl-md;
+	line-height: 1.3;
+	
+}

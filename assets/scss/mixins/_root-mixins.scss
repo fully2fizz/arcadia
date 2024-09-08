@@ -1,0 +1,104 @@
+
+$base-size: $base-font;
+@function f-size($target, $context: $base-font) {
+    @return ($target / $context) * 1rem;
+}
+
+// @each $val in $fontSizes{
+//   .fz-#{$val}{
+//     font-size: f-size($val);
+//   }
+//   }
+  
+//   @each $val in $ttlSizes{
+//   .ttl-#{$val}{
+//     font-size: f-size($val);
+//   }
+//   }
+  
+//   @each $val, $boldname in $fontWeight{
+//   .fw-#{$boldname},
+//   .fw-#{$val}{
+//     font-weight: $val;
+//   }
+// }
+
+
+// @mixin font-sizes($base-font-sizes) {
+//   @each $fs-breakpoint, $fs-font-size in $base-font-sizes {
+//     @if $fs-breakpoint == null {
+//       font-size: $fs-font-size;
+//     }
+//     @else {
+//       @media screen and (min-width: $fs-breakpoint) {
+//         font-size: $fs-font-size;
+//       }
+//     }
+//   }
+// }
+
+// h1-h6 level
+
+
+@each $level, $size in $h-sizes {
+  h#{$level},
+  .h#{$level} {
+    font-family: $h-font;
+    color: $h-color;
+    @each $bp, $fs in $size {
+      @if ($bp == null) {
+        font-size: size($fs);
+      }@else {
+        @include min($bp) {
+          font-size: size($fs);
+        }
+      }
+    }
+  }
+}
+// .ttl sizes (Custom tilte)
+
+@each $level, $size in $ttl-sizes {
+  .ttl-#{$level} {
+    font-family: $h-font;
+    color: $h-color;
+    @each $bp, $fs in $size {
+      @if ($bp == null) {
+        font-size: size($fs);
+      }@else {
+        @include min($bp) {
+          font-size: size($fs);
+        }
+      }
+    }
+  }
+}
+// paragraphs
+
+p {
+  font-size: size(16);
+  color: $text-color;
+  @include lineHeight(16, 27);
+  @include min(1600) {
+    font-size: size(20);
+    @include lineHeight(20, 31);
+  }
+}
+
+// Custom paragraphs sizes
+@each $level, $size in $p-sizes {
+  .fs-#{$level} {
+    color: $text-color;
+    @each $bp, $fs in $size {
+      @if ($bp == null) {
+        font-size: size($fs);
+      } @else {
+        @include min($bp) {
+          font-size: size($fs);
+        }
+      }
+    }
+  }
+}
+
+

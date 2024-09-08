@@ -1,0 +1,294 @@
+/*  ===============
+  1. Reset
+===============  */
+
+
+html {
+    // font-size: var(--base-font);
+    overflow: auto;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    // @include font-sizes($base-font-sizes);
+}
+
+body {
+    position: relative;
+    margin: 0 auto;
+    // padding-top: size(80);
+}
+
+img {
+    max-width: 100%;
+}
+
+.lazyload,
+.lazyloading {
+    opacity: 0;
+}
+
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+.form-control,
+input,
+button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+select.default {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: $white url('../images/carret.png') no-repeat 96% 50%;
+    outline: none;
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+.admin-content-area {
+    /* =====     Unordered List Items     ===== */
+    ul,
+    ol,
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    p {
+        &+h1,
+        &+h2,
+        &+h3,
+        &+h4,
+        &+h5,
+        &+h6,
+        &+ul,
+        &+ol {
+            margin-top: size(24);
+        }
+    }
+    ul {
+        display: block;
+        margin: size(24) 0 size(10);
+        padding-left: size(20);
+        li {
+            display: block;
+            line-height: 1.4;
+            padding-left: size(22);
+            position: relative;
+            &+li {
+                margin-top: size(10);
+            }
+            &:before {
+                background-color: $primary-color;
+                border: none;
+                @include border-radius(50%);
+                content: '';
+                display: block;
+                height: size(10);
+                left: 0;
+                position: absolute;
+                top: size(6);
+                width: size(10);
+            }
+            @include max(1199) {
+                padding-left: size(20);
+                &+li {
+                    margin-top: size(10);
+                }
+                &:before {
+                    height: size(8);
+                    width: size(8);
+                }
+            }
+            @include max(767) {
+                padding-left: size(15);
+                &:before {
+                    height: size(7);
+                    width: size(7);
+                }
+            }
+        }
+        &.white {
+            li {
+                &:before {
+                    border-color: $white;
+                }
+            }
+        }
+    }
+    /* =====     Ordered List Items     ===== */
+    ol {
+        margin: size(24) 0 size(10);
+        counter-reset: item;
+        li {
+            display: block;
+            line-height: 1.4;
+            padding-left: size(20);
+            position: relative;
+            &+li {
+                margin-top: size(15);
+            }
+            &:before {
+                content: counters(item, ".") ".";
+                counter-increment: item;
+                display: inline-block;
+                left: 0;
+                position: absolute;
+            }
+        }
+        &.lower-alpha {
+            li {
+                &:before {
+                    content: counters(item, "", lower-alpha)")";
+                }
+            }
+        }
+        &.lower-roman {
+            li {
+                &:before {
+                    content: counters(item, "", lower-roman)")";
+                }
+            }
+        }
+        &.roman-sub {
+            li {
+                padding-left: size(30);
+                &:before {
+                    content: counters(item, ".", upper-roman)".";
+                    counter-increment: item;
+                    font-weight: 500;
+                }
+                ol {
+                    li {
+                        padding-left: size(32);
+                    }
+                }
+            }
+        }
+        &.decimal-sub {
+            li {
+                padding-left: size(30);
+                &:before {
+                    content: counters(item, ". ", decimal)".";
+                    counter-increment: item;
+                    font-weight: 500;
+                }
+                ol {
+                    padding-top: size(5);
+                    li {
+                        padding-left: size(32);
+                    }
+                    ol {
+                        li {
+                            padding-left: size(50);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ul,
+    ol {
+        &+h2,
+        &+h3,
+        &+h4,
+        &+h5,
+        &+h6 {
+            margin-top: size(30);
+        }
+        &+p {
+            margin-top: size(20) !important;
+        }
+    }
+}
+
+// End reset style
+.d-flx {
+    @include flexbox();
+    &.no-wrap {
+        @include flex-wrap(nowrap);
+    }
+}
+
+.flx-both {
+    @include flx(both);
+}
+
+.flx-top {
+    @include flx(top);
+}
+
+.flx-bottom {
+    @include flx(bottom);
+}
+
+.flx-vcenter {
+    @include flx(vcenter);
+}
+
+.flx-left {
+    @include flx(left);
+}
+
+.flx-right {
+    @include flx(right);
+}
+
+.flx-hcenter {
+    @include flx(hcenter);
+}
+
+.flx-equal-space {
+    @include flx(eqaul-space);
+}
+
+.cf {
+    @include clearfix();
+}
+
+.d-blk {
+    display: block;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.tel {
+    cursor: default;
+}
+
+.no-pad {
+    padding: 0!important;
+}
+
+.default {
+    padding: 0!important;
+    margin: 0!important;
+    list-style: none!important;
+    li {
+        list-style-type: none;
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+}

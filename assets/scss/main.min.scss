@@ -1,0 +1,224 @@
+
+@import 'utilities/variable';
+@import 'mixins/mixins';
+@import 'mixins/root-mixins';
+
+// bootstrap
+@import 'bootstrap/bootstrap';
+// Resets
+@import 'utilities/resets';
+
+@import './components/header';
+@import './components/footer';
+
+
+// lenis scroll
+
+html.lenis {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    -ms-scroll-chaining: none;
+        overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+// /font tag style
+h1 {
+    font-size: 60px;
+    line-height: 74px;
+    @include max(1200) {
+        font-size: 50px;
+        line-height: 62px;
+    }
+    @include max(991) {
+        font-size: 44px;
+        line-height: 58px;
+    }
+    @include max(568) {
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+h2 {
+    font-size: 52px;
+    line-height: 64px;
+    @include max(1200) {
+        font-size: 46px;
+        line-height: 56px;
+    }
+    @include max(991) {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    @include max(568) {
+        font-size: 32px;
+        line-height: 42px;
+    }
+}
+h3 {
+    font-size: 40px;
+    line-height: 54px;
+    @include max(1200) {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    @include max(991) {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    @include max(568) {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+p {
+    font-size: 18px;
+    line-height: 30px;
+    @include max(1200) {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+// button style
+.btn {
+    height: auto;
+    transition: all 0.2s ease-in-out;
+    border-radius: 0;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  
+  /* Primary Button */
+  .btn-primary {
+    background-color: #e6c700;
+    border: 1px solid #e6c700;
+    color: rgb(0, 0, 0);
+  }
+  
+  .btn-primary:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #e6c700;
+  }
+  
+  /* Primary Arrow Button */
+  .btn-primary-arrow {
+    background-color: transparent;
+    border: 1px solid #e6c700;
+    color: rgb(0, 0, 0);
+  }
+  
+  .btn-primary-arrow:hover {
+    background-color: #e6c700;
+    color: rgb(0, 0, 0);
+    border-color: #e6c700;
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    background-color: #e6c700;
+    color: #000000;
+    position: relative;
+    border: 1px solid #e6c700;
+  }
+  .btn-secondary:hover {
+    background-color: transparent;
+    color: black;
+    border-color: #e6c700;
+  }
+  
+  .btn-normal {
+    color: #000000;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    &::before {
+      content: '';
+      width: 30%;
+      height: 1px;
+      background-color: #000;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: all 0.2s ease-in-out;
+    }
+    &:hover {
+      color: #e6c700;
+      &::before {
+        background-color: #e6c700;
+        width: 100%;
+      }
+    }
+  }
+
+
+// loader
+.loader {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  will-change: top;
+
+  figure {
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.home-header {
+  opacity: 0;
+  transform: translateY(-100%);
+  will-change: transform;
+  &.loader-off {
+    transform: none !important;
+    will-change: unset;
+  }
+}
+.home-page {
+  will-change: transform;
+  transform: translateY(size(150));
+
+  &.loader-off {
+    transform: none !important;
+    will-change: unset;
+  }
+}
+
+.parallaxImage {
+  transform: scale(1.2);
+  will-change: transform;
+}

@@ -222,3 +222,228 @@ p {
   transform: scale(1.2);
   will-change: transform;
 }
+
+
+
+#enquiryModal{
+  .modal-dialog{
+      max-width: 1150px;
+      min-height: calc(100vh - 70px);
+      display: flex;
+      align-items: center;
+      @include max(1199.98) {
+          max-width: 90%;
+      }
+      @include max(767.98) {
+          max-width: 95%;
+          margin: 0.5rem auto;
+          min-height: calc(100vh - 20px);
+
+      }
+      
+  }
+  .modal-content{
+      border: 0;
+      padding: 80px;
+      padding-bottom: 50px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 10%);
+      @include max(1599.98) {
+          padding: 60px;
+      }
+      @include max(767.98) {
+        padding: 70px 15px;
+      }
+    }
+    .modal-header{
+      border: 0;
+      .close{
+          background: #ffffff;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          border: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          cursor: pointer;
+          span{
+              font-size: 50px;
+              // line-height: 0;
+              text-align: center;
+              color: #1c1d1c;
+              margin-top: -9px;
+              cursor: pointer;
+              @include max(767.98) {
+                  font-size: 40px;
+              }
+          }
+      }
+  }
+  .modal-body{
+      padding: 0;
+  }
+  label{
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: #696969;
+      @include max(1599.98) {
+          font-size: 18px;
+      }
+      @include max(767.98) {
+          font-size: 16px;
+      }
+  }
+  .form-control{
+      font-size: 16px;
+      font-weight: 500;
+      color: #000;
+      height: 55px;
+      padding: 25px;
+      border-radius: 0;
+      @include max(1599.98) {
+          padding: 15px;
+      }
+      @include max(767.98) {
+          height: 50px;
+          padding: 10px;
+      }
+      &::placeholder{
+          color: #D8D8D8;
+          transition: 0.5s ease-in-out;
+      }
+      &:focus{
+          &::placeholder{
+              padding-left: 20px;
+              opacity: 0;
+          }
+      }
+      &.select {
+        position: relative;
+        appearance: auto;
+      }
+  }
+  .form-group{
+          margin-bottom: 40px;
+          @include max(767.98) {
+              margin-bottom: 35px;
+          }
+  }
+  textarea.form-control{
+      height: 120px;
+      resize: none;
+  }
+  .form-control:focus {
+      border-color: #f4e6d9;
+  }
+  .send-btn{
+      height: 70px;
+      min-width: 280px;
+      @include max(767.98) {
+          height: 50px;
+          min-width: auto;
+      }
+      &:hover{
+          background: #000;
+          color: #ffffff;
+      }
+  }
+
+  input.radio:empty {
+      margin-left: -999px;
+  }
+  
+  /* style label */
+  input.radio:empty ~ label {
+      position: relative;
+      float: left;
+      line-height: 2.5em;
+      text-indent: 3.25em;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      font-size: 15px;
+      font-weight: 400;
+      color: #000;
+  }
+  
+  input.radio:empty ~ label:before {
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      width: 2.5em;
+      background: #dfdfdf;
+  }
+  
+  /* toggle hover */
+  input.radio:hover:not(:checked) ~ label:before {
+      content:'\2714';
+      text-indent: .9em;
+      color: #C2C2C2;
+  }
+  
+  input.radio:hover:not(:checked) ~ label {
+      color: #888;
+  }
+  
+  /* toggle on */
+  input.radio:checked ~ label:before {
+      content:'\2714';
+      text-indent: .9em;
+      color:  #133A1B;
+      background-color: #4DCB6D;
+  }
+  
+  // input.radio:checked ~ label {
+  //     color: #777;
+  // }
+  
+  // /* radio focus */
+  // input.radio:focus ~ label:before {
+  //     box-shadow: 0 0 0 3px #999;
+  // }
+
+}
+
+button:focus {
+  outline: none;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus{
+  box-shadow: none;
+}
+
+// .daterangepicker{
+//     display: none;
+//     top:50% !important;
+//     left: 50% !important;
+//     transform: translate(-50%,-50%) !important;
+//     width: 100% !important;
+//     height: 100vh;
+// }
+
+
+.daterangepicker{
+  border: 1px solid #ccc;
+  display: none;
+
+}
+
+.date-rage-pick{
+  .form-group{
+      width: 100%;
+  }
+}
+
+.modal-open{
+  overflow-y: auto;
+}

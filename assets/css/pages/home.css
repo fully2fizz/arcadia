@@ -243,6 +243,9 @@
 .OurRooms .property-item .border-end {
   border-right: 1px dashed rgba(243, 224, 15, 0.8) !important;
 }
+.OurRooms .property-item .h5 {
+  font-weight: bold;
+}
 
 .OurService {
   background-color: #0F172B;
